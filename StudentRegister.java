@@ -6,22 +6,18 @@ public class StudentRegister{
     private double soma; 
     private double media;
     private double[] notas = new double[4];
-
     
     public StudentRegister(String nomeDisciplina){
         nomeDisc = nomeDisciplina;
     }
         
-    
     public void cadastraHoras(int horas){
         quantHoras = horas;
     }
-
     
     public void cadastraNota(int nota, double valorNota){   
         notas[nota - 1] = valorNota;       
     }
-
     
     public boolean aprovado(){
         soma = 0;
@@ -37,7 +33,6 @@ public class StudentRegister{
             return false;
         }
     }
-
     
     public String toString(){
         return nomeDisc + " " + quantHoras + " " + media + " " + Arrays.toString(notas);
