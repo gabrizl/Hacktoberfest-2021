@@ -1,0 +1,19 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    String nome;
+    double vendas, salarioIncial , salarioFinal;
+    Scanner entrada = new Scanner(System.in);
+    
+    nome = entrada.nextLine();
+    salarioIncial = entrada.nextDouble();
+    vendas = entrada.nextDouble();
+    
+    salarioFinal = salarioIncial + vendas * 0.15;
+    
+    System.out.printf("TOTAL = R$ %.2f\n",salarioFinal);
+    
+
+  }
+}
