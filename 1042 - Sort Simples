@@ -1,0 +1,70 @@
+import java.io.IOException;
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+ 
+      Scanner input = new Scanner(System.in);
+    int x, y, z, aux, ordem[] = new int[3];
+
+    x = input.nextInt();
+    y = input.nextInt();
+    z = input.nextInt();
+
+    if(x < y && x < z){
+      ordem[0] = x;
+      
+      if(y < z){
+        ordem[1] = y;
+        ordem[2] = z;
+      }
+      else{
+        ordem[1] = z;
+        ordem[2] = y;
+      }
+
+      }
+    else{
+      if(y < x && y < z){
+        ordem[0] = y;
+        
+        if(x < z){
+          ordem[1] = x;
+          ordem[2] = z;
+        }
+        else{
+          ordem[1] = z;
+          ordem[2] = x;
+        }
+
+      }
+      else{
+
+        if(z < y && z < x){
+          ordem[0] = z;
+          if(y < x){
+            ordem[1] = y;
+            ordem[2] = x;
+          }
+          else{
+            ordem[1] = x;
+            ordem[2] = y;
+          }
+        }
+      }
+    }
+
+    for(int i = 0; i < 3; i++){
+      System.out.println(ordem[i]);
+    }
+    System.out.println();
+    System.out.println(x);
+    System.out.println(y);
+    System.out.println(z);
+    
+    input.close();
+ 
+    }
+ 
+}
