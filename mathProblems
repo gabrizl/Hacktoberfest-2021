@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class mathProblems {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String[] dados = sc.nextLine().split(" ");
+        
+        int soma = 0;
+        float media = 0;
+              
+        for(String dadosEntry : dados){
+            soma += Integer.parseInt(dadosEntry);    
+        }
+        
+        media = soma/dados.length;
+
+        //Validando
+        System.out.println(dados.length);
+        System.out.println(media);    
+        System.out.println(soma); 
+
+        for(String dadosEntry : dados){ 
+            if(Integer.parseInt(dadosEntry) > media){
+                System.out.print(dadosEntry + " ");   
+            }
+        }
+
+        sc.close();
+    }
+    
+}
