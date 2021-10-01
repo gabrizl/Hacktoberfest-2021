@@ -1,10 +1,3 @@
-/*
-    @author: Malbolge;
-    @date: 12/06/2021;
-    @problem: Dartboard;
-    @subject: Probability;
-*/
-
 #include <stdio.h>
 #include <math.h>
 
