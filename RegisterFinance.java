@@ -1,4 +1,3 @@
-
 public class RegisterFinance{
     private int somaGanhos;
     private int ganhosIn;
@@ -7,12 +6,10 @@ public class RegisterFinance{
     private int totalDisponivel;
     private int[] ganhosTotal;
     
-    
     public RegisterFinance(int ganhosIniciais, int totalDeGanhos){
         ganhosTotal = new int[totalDeGanhos];
         ganhosIn = ganhosIniciais;
     }
-    
     
     public void adicionaGanhos(int valorCentavos, int posicaoGanho){
         ganhosTotal[posicaoGanho - 1] = valorCentavos;
@@ -23,13 +20,11 @@ public class RegisterFinance{
         somaGanhos += ganhosIn;
     }
 
-    
     public void pagaDespesa(int valorCentavos){
         valorDespesa = valorCentavos;
         totalDespesa += valorDespesa;
         totalDisponivel = somaGanhos - totalDespesa;
     }
-    
     
     public String exibeGanhos(){
         String exibeValor = "";
@@ -44,7 +39,6 @@ public class RegisterFinance{
         return exibeValor;
     }
 
-    
     public String toString(){
         return "Total recebidos: " + somaGanhos + ", Despesas totais: " + totalDespesa + ", Total dispon�vel: " + totalDisponivel;
     }
