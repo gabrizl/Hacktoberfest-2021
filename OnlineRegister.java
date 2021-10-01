@@ -4,10 +4,9 @@ public class OnlineRegister{
     private int tempoE;
     private int totalTempoOn;
     
-    
     public OnlineRegister(String nomeDisciplina){
         nomeDisc = nomeDisciplina;
-        tempoE = 120;
+        tempoE = 60;
     }
 
     
@@ -16,8 +15,7 @@ public class OnlineRegister{
         tempoE = tempoOnlineEsperado;        
     }
 
-    
-    
+   
     public void adicionaTempoOnline(int tempo){
         totalTempoOn += tempo;
     }
