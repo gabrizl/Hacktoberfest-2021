@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class moreMathProblems{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        float m, z, x;
+        String simbolo = sc.nextLine();
+        if(simbolo.equals("+") || simbolo.equals("-") || simbolo.equals("*") || simbolo.equals("/")){
+            m = sc.nextFloat();
+            z = sc.nextFloat();
+                if(simbolo.equals("/") && z == 0){
+                    System.out.println("ERRO");
+                }else if(simbolo.equals("+")){
+                    x = m + z;
+                    System.out.println("RESULTADO: " + x);
+                }else if(simbolo.equals("-")){
+                    x = m - z;
+                    System.out.println("RESULTADO: " + x);
+                }else if(simbolo.equals("*")){
+                    x = m * z;
+                    System.out.println("RESULTADO: " + x);
+                }else if(simbolo.equals("/")){
+                    x = m / z;
+                    System.out.println("RESULTADO: " + x);
+                }
+        }else{
+            System.out.println("ENTRADA INVALIDA");
+        }
+        sc.close();
+    }
+    
+}
