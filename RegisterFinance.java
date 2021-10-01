@@ -1,9 +1,3 @@
-/**
- * Classe que registra diversas informa��es sobre as finan�as do aluno. Todos o valores recebidos e retornados nessa classe
- * sao em centavos.
- * @author Mariane
- *
- */
 
 public class RegisterFinance{
     private int somaGanhos;
