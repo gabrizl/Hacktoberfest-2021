@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+
+    Scanner sc1 = new Scanner(System.in);
+
+    // Casos de teste
+    int cases = sc1.nextInt();
+
+    int j = 0;
+    while (j < cases) {
+      int qtd = 0;
+      int grades = sc1.nextInt();
+
+      int i;
+      int[] array = new int[grades];
+      int[] arrayAlt = new int[grades];
+
+      for(i = 0; i < grades; i++) {
+        int numArray = sc1.nextInt();
+        array[i] = numArray;
+        arrayAlt[i] = numArray;
+      }
+  
+      int n = array.length;
+      int k;
+      for (k = 1; k < n; ++k) {
+        int key = arrayAlt[k];
+        int b = k - 1;
+        while (b >= 0 && arrayAlt[b] < key) {
+          arrayAlt[b + 1] = arrayAlt[b];
+          b = b - 1;
+        }
+        arrayAlt[b + 1] = key;
+      }
+
+      int d;
+      for(d = 0; d < grades; d++)
+        if (array[d] == arrayAlt[d])
+          qtd++;
+
+
+      System.out.println(qtd);
+      j++;
+    }
+  }
+}
