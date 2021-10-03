@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TAMANHO_MAXIMO 50000
+#define DIREITA 1
+#define ESQUERDA -1
+
+//Prototipação
+int formaTriangulo(const int *COLUNAS, int indice, int tamanho);
+int verificarAltura(const int *COLUNAS, int indice, int tamanho, int direcao);
+
+int main (void) {
+  int N,
+  COLUNAS[TAMANHO_MAXIMO],
+  i,
+  j,
+  maiorColuna,
+  maiorColunaDoLaco;
+
+  scanf("%d", &N);
+
+  for (i = 0; i < N; i++) {
+    scanf("%d", COLUNAS + i);
+  }
+
+  maiorColuna = 1;
+  maiorColunaDoLaco = 1;
+
+  for (i = 2; i <= N; i++){
+    for (j = i - 1; j <= N - i; j++){
+      if (formaTriangulo(COLUNAS, j, i)){
+        maiorColunaDoLaco = i;
+        break;
+      }
+    }
+
+    if (maiorColuna == maiorColunaDoLaco) {
+        break;
+    }
+
+    maiorColuna = maiorColunaDoLaco;
+  }
+
+  printf("%d\n", maiorColuna);
+
+  return 0;
+}
+
+//Formar Triangulo
+int formaTriangulo(const int *COLUNAS, int indice, int tamanho) {
+  if (COLUNAS[indice] >= tamanho) {
+    return verificarAltura(COLUNAS, indice - 1, tamanho - 1, ESQUERDA) && verificarAltura(COLUNAS, indice + 1, tamanho - 1, DIREITA);
+  }
+  else {
+    return 0;
+  }
+}
+
+//Verificar Altura
+int verificarAltura(const int *COLUNAS, int indice, int tamanho, int direcao){
+  if (tamanho == 1){
+    return 1;
+  }
+  else if (COLUNAS[indice] >= tamanho){
+    return verificarAltura(COLUNAS, indice + direcao, tamanho - 1, direcao);
+  }
+  else {
+    return 0;
+  }
+}
